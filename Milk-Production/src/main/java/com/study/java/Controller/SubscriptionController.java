@@ -1,9 +1,11 @@
 package com.study.java.Controller;
 
+
 import com.study.java.Entity.MilkOrder;
 import com.study.java.Repository.MilkOrderRepository;
 import com.study.java.Service.OrderService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,14 +14,17 @@ import java.util.List;
 @CrossOrigin(origins = "*") // keep open for dev; restrict later
 public class SubscriptionController {
 
-    private final OrderService orderService;
-    private final MilkOrderRepository milkOrderRepository;
+    @Autowired
+    private  OrderService orderService;
 
-    public SubscriptionController(OrderService orderService,
-                                  MilkOrderRepository milkOrderRepository) {
-        this.orderService = orderService;
-        this.milkOrderRepository = milkOrderRepository;
-    }
+    @Autowired
+    private  MilkOrderRepository milkOrderRepository;
+
+//    public SubscriptionController(OrderService orderService,
+//                                  MilkOrderRepository milkOrderRepository) {
+//        this.orderService = orderService;
+//        this.milkOrderRepository = milkOrderRepository;
+//    }
 
     @PostMapping("/api/subscribe")
     public <SubscribeRequest> MilkOrder subscribe(@RequestBody SubscribeRequest req) {

@@ -5,19 +5,43 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 public class SubscribeRequest {
-    public record SubscribeRequest(
-            @NotBlank
-            String name,
-            @NotBlank
-            String phone,
-            @NotBlank
-            String address,
-            @NotNull
-            Integer milkId,
-            @Positive
-            double quantity,
-            // must be: "daily" | "weekly" | "monthly"
-            @NotBlank
-            String frequency
-    ) {}
+
+    @NotBlank
+    private String name;
+
+    @NotBlank
+    private String phone;
+
+    @NotBlank
+    private String address;
+
+    @NotNull
+    private Integer milkId;
+
+    @Positive
+    private double quantity;
+
+    @NotBlank
+    private String frequency; // must be: "daily" | "weekly" | "monthly"
+
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) { this.name = name; }
+
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
+
+    public Integer getMilkId() { return milkId; }
+    public void setMilkId(Integer milkId) { this.milkId = milkId; }
+
+    public double getQuantity() { return quantity; }
+    public void setQuantity(double quantity) { this.quantity = quantity; }
+
+    public String getFrequency() { return frequency; }
+    public void setFrequency(String frequency) { this.frequency = frequency; }
 }

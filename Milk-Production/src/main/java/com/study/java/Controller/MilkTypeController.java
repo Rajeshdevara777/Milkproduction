@@ -3,6 +3,7 @@ package com.study.java.Controller;
 
 import com.study.java.Entity.MilkType;
 import com.study.java.Service.MilkService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,11 +15,12 @@ import java.util.List;
 @CrossOrigin(origins = "*") // keep open during development
 public class MilkTypeController {
 
-    private final MilkService service;
-
-    public MilkTypeController(MilkService service) {
-        this.service = service;
-    }
+    @Autowired
+    private  MilkService service;
+//
+//  //  public MilkTypeController(MilkService service) {
+//        this.service = service;
+//    }
 
     // GET /api/milk_types
     @GetMapping
