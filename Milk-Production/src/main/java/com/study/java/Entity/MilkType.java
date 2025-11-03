@@ -1,11 +1,9 @@
 package com.study.java.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name="milk_types")
 public class MilkType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

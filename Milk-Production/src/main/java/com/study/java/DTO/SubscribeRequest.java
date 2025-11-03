@@ -19,29 +19,56 @@ public class SubscribeRequest {
     private Integer milkId;
 
     @Positive
-    private double quantity;
+    private Double quantity;
 
     @NotBlank
     private String frequency; // must be: "daily" | "weekly" | "monthly"
 
-    // Getters and setters
     public String getName() {
         return name;
     }
-    public void setName(String name) { this.name = name; }
 
-    public String getPhone() { return phone; }
-    public void setPhone(String phone) { this.phone = phone; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public String getPhone() {
+        return phone;
+    }
 
-    public Integer getMilkId() { return milkId; }
-    public void setMilkId(Integer milkId) { this.milkId = milkId; }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-    public double getQuantity() { return quantity; }
-    public void setQuantity(double quantity) { this.quantity = quantity; }
+    public String getAddress() {
+        return address;
+    }
 
-    public String getFrequency() { return frequency; }
-    public void setFrequency(String frequency) { this.frequency = frequency; }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Integer getMilkId() {
+        return milkId;
+    }
+
+    public void setMilkId(Integer milkId) {
+        this.milkId = milkId;
+    }
+
+    public Double getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+    }
 }

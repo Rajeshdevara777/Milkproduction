@@ -1,11 +1,13 @@
 package com.study.java.Controller;
 
 
+import com.study.java.DTO.SubscribeRequest;
 import com.study.java.Entity.MilkOrder;
 import com.study.java.Repository.MilkOrderRepository;
 import com.study.java.Service.OrderService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,8 +29,9 @@ public class SubscriptionController {
 //    }
 
     @PostMapping("/api/subscribe")
-    public <SubscribeRequest> MilkOrder subscribe(@RequestBody SubscribeRequest req) {
-        return orderService.subscribeAndCreateOrder(req);
+        public ResponseEntity<MilkOrder> subscribe(@RequestBody SubscribeRequest req) {
+        MilkOrder created = orderService.subscribeAndCreateOrder(req);
+        return ResponseEntity.status(201).body(created);
     }
 
     @GetMapping("/api/orders")
